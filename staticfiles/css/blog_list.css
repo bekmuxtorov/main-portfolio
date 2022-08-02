@@ -1,0 +1,62 @@
+.blog-items{
+    display:flex;
+    flex-direction: column;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blog-item{
+    list-style: none;
+    box-sizing: border-box;
+    color: aliceblue;
+    background-color: #413f42;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid chartreuse;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.item-description{
+    padding: 20px 20px;
+    font-family: 'Roboto', sans-serif;
+    
+    font-size: 1.5rem;
+    line-height: 2;
+    letter-spacing: 2;
+    color: aliceblue;
+}
+
+.blog-title{
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+    letter-spacing: 2;
+    color: aliceblue;
+
+}
+
+.blog-date{
+ margin: 0;
+}
+
+.blog-body{
+    margin: 0;
+    padding-top: 10px;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
+}
+
+.blog-a{
+    display: block;
+    text-align: right;
+    font-size: 18px;
+    color: #fff;
+}
+
+.blog-item:hover .blog-a{
+    color: chartreuse;
+}

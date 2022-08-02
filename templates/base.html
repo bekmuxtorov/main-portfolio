@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="author" content="Asadbek Muxtorov">
+    <meta name="keyword" content="bekmuxtorov, Asadbek Muxtorov, Muxtorov's portfolio, Muxtorov's resume, Asadbek's Blog">
+    <meta name="description" content="I'm Asadbek Muxtorov 19 years old, from Fergana, student at the University, Front-End Engineer">
+    
+    <link rel="shortcut icon" href=" {% static 'images/icon.ico' %} ">
+    <link rel="stylesheet" href="{% static 'css/main.css' %} ">
+    
+    <link rel="stylesheet" href="{% block link %} {% endblock link %}">
+    <script src="https://kit.fontawesome.com/4de12ac000.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand:wght@300;400;500;600&family=Roboto:ital,wght@0,300;0,500;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,600;0,700;1,600&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <title>{% block title %}
+        Asadbek Muxtorov || Blog
+        {% endblock title %}</title>
+        
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header">
+                    <div class="logo">
+                        <a href="index.html">bekmuxtorov.uz</a>
+                    </div>
+                    <div class="nav">
+                        <ul class="nav-items">
+                            
+                            <li class="nav-item {% if request.resolver_match.url_name == 'home'%}active{% endif %} " > <a class="nav-item" href=" {% url 'home' %}">Home</a></li>
+                            
+                            
+                            <li class="nav-item {% if request.resolver_match.url_name == 'works'%}active{% endif %} " > <a class="nav-item" href=" {% url 'works' %}">Portfolio</a></li>
+                            
+                            <li class="nav-item {% if request.resolver_match.url_name == 'blog'%}active{% endif %} " > <a class="nav-item" href=" {% url 'blog' %}">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="container-lg content">
+            {% block content %}
+            
+            {% endblock content %}
+        </div>
+        
+        <footer>
+            <p>
+                <span class="c-character">©</span>
+                <script>
+                    const Year = new Date().getFullYear();
+                    document.write(Year)
+                </script>
+                Asadbek Muxtorov
+            </p>
+        </footer>
+        
+        <script src=" {% static 'js/typed.js' %} "></script>
+        <script src=" {% static 'js/app.js' %} "></script>
+        
+    </body>
+    </html>

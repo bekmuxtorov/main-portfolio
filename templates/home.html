@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+        Asadbek Muxtorov || Blog
+    {% endblock title %}
+{% block content %}
+<!-- Header -->
+
+
+<!-- main section -->
+<section class="main-section">
+    <div class="container">
+        <div class="info">
+            <div class="main-img">
+                <img src=" {% static 'images/author.jpg' %} " alt="author img">
+            </div>
+            <div class="main-description">
+                <h1><span class="an"></span></h1>
+                <h3>
+                    Hobby: Frontend and Python
+                </h3>
+                <div class="social-media">
+                    <a href="https://github.com/bekmuxtorov"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://t.me/Asadbek_Muxtorov"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://www.linkedin.com/in/asadbek-muxtorov-49b754229/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/muxtorov4101"><i class="fa-brands fa-instagram-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="sub-paragraf">
+            <p><span class="an2"></span></p>
+            <div class="btn-group">
+                <a class="button blog-link" href=" {% url 'blog' %} " >Read Blog</a>
+                <a class="button portfolio-link" href="{% url 'works' %}">Portfolio</a>
+
+            </div>
+        </div>
+    </div>
+    
+</section>
+{% endblock content %}
