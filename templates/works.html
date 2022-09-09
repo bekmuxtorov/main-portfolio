@@ -1,45 +1,79 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends "base_portfolio.html" %}
 
-{% block link %}{% static 'css/works.css' %}{% endblock link %}
-{% block title %}Portfolio || Asadbek Muxtorov{% endblock title %}
-
+{% block title %}
+    Bajarilgan ishlar || Asadbek Muxtorov
+{% endblock title %}
 {% block content %}
-<div class="works">
+
+<section class="portfolio">
     <div class="container">
         <div class="section-title">
-            <h1>Bajarilgan ishlar</h1>
+            <h4 class="sub-title">
+                Bajarilgan ishlar
+            </h4>
+            <h1 class="title">
+                Barcha qiziqarli ishlar
+            </h1>
+            <p>
+                Foydalanuvchilar uchun qulay veb-sahifalar bizning ishimizdir. Shuningdek, men ba'zi ajoyib korxonalarga brending va shaxsiy echimlar bilan yordam berdim.
+            </p>
         </div>
-        <div class="works-area">
-            <ul class="works-items">
-                
-                {% for work in object_list %}
-                
-                <li class="works-item">
-                    <div class="item-img">
-                        <img src=" {{work.img.url}} " alt=" {{work.project_name}} " width="100%">
-                    </div>
-                    <div class="item-word">
-                        <p class="project-name">Loyiha nomi: <span>{{ work.project_name }}</span> </p> 
-                        <p class="project-description">Loyiha haqida: <br>  
-                            <span>
-                                {{ work.project_description | safe}}
-                            </span>
-                        </p><br>
-                        <p class="project-tech">Texnalogiyalar: <span> {{work.project_tech}} </span> </p> 
-                        <p class="project-view">Demo sayt:   <span>{{work.project_view}}</span>
-                        </p> 
-                        <a class="item-a" href="{{ work.project_view }}" target="_blank">Saytni ko'rish</a>
-                        <a class="item-a a-hub" href="{{ work.project_github }}" target="_blank">GitHub'da ko'rish</a>
-
-                        
-                        
-                    </div>
+        
+        <div class="data-filter">
+            
+            <ul class="indicator filter-items">
+                <li data-filter="all">
+                    <a class="filter-item active filter-item1" href="#">Barchasi</a>
+                </li>
+                <li data-filter="Frontend">
+                    <a class="filter-item filter-item2" href="#">Frontend</a>
+                </li>
+                <li data-filter="Backend">
+                    <a class="filter-item filter-item3" href="#">Backend</a>
+                </li>
+                <li data-filter="Telegram Bot" >
+                    <a class="filter-item filter-item4" href="#">Telegram Bot</a>
                 </li>
                 
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="data-field">
+            <ul class="items portfolio-items">
+                {% for work in object_list %}
+                <li data-category="" class="portfolio-item" >
+                    <strong style="display: none;">{{ work.get_direction }}</strong>
+                    
+                    <div class="description">
+                        <span class="item-span filter-item">
+                            {{ work.get_direction }}
+                        </span>
+                        <h3>
+                            {{ work.project_name |safe }} 
+                        </h3>
+                        <p>
+                            {{ work.project_short_description}}
+                        </p>
+                        
+                        <a class="btn-detail" href="{% url 'works_detail' work.pk %}">
+                            Batafsil ko'rish  <span class="btn-icon"></span>
+                        </a>
+                    </div>
+                    
+                    <div class="img">
+                        <img src="{{ work.img.url }}" alt="images">
+                    </div>
+                    
+                </li>
                 {% endfor %}
+                
+                
             </ul>
         </div>
+        
     </div>
-</div>
+</section>
 {% endblock content %}

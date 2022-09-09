@@ -2,6 +2,10 @@
     margin-top: 100px;
 }
 
+.color-white{
+     background-color: #fff !important;
+}
+
 .section-title{
     text-align: center;
     color: aliceblue;

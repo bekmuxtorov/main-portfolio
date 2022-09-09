@@ -1,0 +1,47 @@
+{% extends "base_portfolio.html" %}
+{% load static %}
+{% block link %}{% static 'css/contact.css' %}{% endblock link %}
+{% block title %} Bog'lanish || Asadbek Muxtorov
+  
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <section class="contact">
+        <div class="sub-title align-center">
+            Bog'lanish
+        </div>
+        <form action="" onsubmit=" return sendtelegram()">
+            <textarea type="text" name="message" rols="20" placeholder="Xabaringizni yozing" id="message"></textarea>
+            <div class="box1">
+                <input type="text" name="name" placeholder="Ismingizni kiriting" required autocomplete="off" id="name">
+                <input type="email" name="email" placeholder="Emailingizni kiriting" required  id="email">
+            </div>
+            <input type="text" placeholder="Xatning qisqacha mazmunini yozing" name="mazmun" id="mazmun">
+            <input type="submit" value="Jo'natish" id="btn" class="btn btn-primary contact_button">
+
+        </form>
+
+        <!-- asdfasdf -->
+        <!-- <form action="" onsubmit=" return sendtelegram()">
+            <textarea type="text" name="message" rols="20" placeholder="Xabaringizni yozing" id="message"></textarea>
+            <div class="forms">
+                <div class="forms-item">
+                    <input type="text" name="name" placeholder="Ismingizni kiriting" required autocomplete="off" id="name">
+                </div>
+                <div class="forms-item">
+                    <input type="email" name="email" placeholder="Emailingizni kiriting" required  id="email">
+                </div>
+            </div>
+            <div class="forms-item forms-item3">
+                <input type="number" name="number" placeholder="Telefon raqamingizni kiriting" required autocomplete="off" id="number">   
+            </div>
+            <input type="submit" value="Jo'natish" id="btn" class="button">
+        </form>  -->
+        
+        
+    </section>
+</div>
+{% endblock content %}
+{% block js %}{% static 'js/sendtelegram.js' %}
+  
+{% endblock js %}

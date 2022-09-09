@@ -1,0 +1,79 @@
+{% extends "base_portfolio.html" %}
+{% load static %}
+
+
+{% block title %}{{ object.project_name }}  || Asadbek Muxtorov
+  
+{% endblock title %}
+{% block link %}{% static 'css/detail.css' %}{% endblock link %}
+
+{% block content %}
+
+
+<section class="detail-name" style="background-image: url('{% static 'images/background-img.png' %}')">
+    <div class="container">
+        <h4 class="detail-sub--title">
+            {{ object.project_short_description }}
+
+            
+        </h4>
+        
+        <h1 class="detail-title">
+            {{ object.project_name }}
+        </h1>
+        
+        <div class="detail-data">
+            <h4 class="date">
+                {{ object.get_date }}
+            </h4>
+            
+            <h4 class="client">KLIENT: <span class="client-name">{{ object.project_client }}</span></h4>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio-detail">
+    <div class="container">
+        <div class="detail-img">
+            <img src="{% static 'images/detail-img.png' %}" alt="picture for detail">
+        </div>
+        <div class="detail-description">
+            <ul class="project-overview">
+                <li>
+                    <h4>
+                        Loyiha haqida
+                    </h4>
+                </li>
+                <li>
+                    <h5 class="overview-title">
+                        Dasturlash jarayoni
+                    </h5>
+                    
+                    <p>
+                        {{ object.project_description |safe }}
+                    </p><br><br>
+                    
+                    
+                    <h5 class="overview-title">
+                        Loyiha deploymenti:
+                    </h5>
+                    <p>
+                        <a href="{{ object.project_view }}">
+                            {{ object.project_view }}
+                        </a>
+                    </p>
+                    
+                    <h5 class="overview-title">
+                        Loyiha kodi:
+                    </h5>
+                    <p>
+                        <a href="{{ object.project_github }}">
+                            {{ object.project_github }}
+                        </a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock content %}

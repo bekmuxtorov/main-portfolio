@@ -10,3 +10,11 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Blog
     template_name = 'blog_detail.html'
+
+    def get_object(self):
+        obj = super().get_object()
+        obj.blog_view += 1
+        obj.save()
+        return obj
+
+

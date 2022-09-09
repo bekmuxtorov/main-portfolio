@@ -1,5 +1,8 @@
+from multiprocessing import context
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, DetailView
+
+from .const import Const
 from .models import Works
 
 # Create your views here.
@@ -9,3 +12,16 @@ class HomePageView(TemplateView):
 class WorksListView(ListView):
     model = Works
     template_name = 'works.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(WorksListView, self).get_context_data(**kwargs)
+        context["project_directions"] = dict(Const.project_directions)
+        return context
+
+class WorkDetailView(DetailView):
+    model = Works
+    template_name = 'works_detail.html'
+
+class ContactView(TemplateView):
+    template_name = 'contact.html'
+     

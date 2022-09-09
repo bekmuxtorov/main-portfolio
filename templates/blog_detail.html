@@ -1,33 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block link %}{% static 'css/blog_list.css' %}{% endblock link %}
+{% block link %}{% static 'css/blog_detail.css' %}{% endblock link %}
 
 {% block title %}
 {{object.title}}
 {% endblock title %}
 {% block content %}
 
-<div class="blog container">
-    <ul class="blog-items">
-        <li class="blog-item">
-            <img src=" {{ object.image.url }} " alt=" {{ object.title }}" width="100%">
-            <div class="item-description">
-                <h4 class="blog-title">
-                    {{ object.title }}
-                </h4>
-                <h5 class="blog-date">
-                    {{ object.date }}
-                </h5>
+<div class="container blog">
+    <li class="blog-item">
+        <img src=" {{ object.image.url }} " alt=" {{ object.title }}" width="100%">
+        <div class="item-description">
+            <h4 class="blog-title">
+                {{ object.title }}
+            </h4>
+            <div class="blog-date">
+                <div class="date">
+                    {{ object.get_date }}
+                </div>
                 
-                <p class="blog-body">
-                    {{ object.body | safe}}
-                </p><br>
+                <div class="view">
+                    <i class="fa-solid fa-eye"></i>{{ object.get_view }}
+                </div>
+                
+                
             </div>
             
-        </li>     
+            <div class="blog-body">
+                {{ object.body | safe}}
+            </div><br>
+        </div>
         
-    </ul>
-</div>
+    </li>  
+</div>   
+
+
 
 {% endblock content %}
