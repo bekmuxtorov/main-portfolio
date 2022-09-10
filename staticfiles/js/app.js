@@ -1,17 +1,45 @@
-var typed = new Typed('.an', {
-    strings: [
-        "ASADBEK MUXTOROV"
-    ],
-    typeSpeed: 100,
-    loop: false
-});
 
-var typed = new Typed('.an2', {
-    strings: [
-        "19 years old, from Fergana, student at the University, Front-End Engineer"
-    ],
-    typeSpeed: 100,
-    loop: false,
-    startDelay: 300,
-    showCursor: true
-});
+let field = document.querySelector('.items');
+let li = Array.from(field.children);
+
+function FilterProduct() 
+{
+    for(let i of li){
+        const name = i.querySelector('strong');
+        const x = name.textContent;
+        i.setAttribute("data-category", x);
+        
+    }
+    
+    let indicator = document.querySelector('.indicator').children;
+    
+    this.run = function() {
+        for(let i=0; i<indicator.length;i++){
+            indicator[i].onclick = function() {
+                for (let x=0; x<indicator.length; x++){
+                    indicator[x].classList.remove('active');
+                }
+                
+                this.classList.add('active');
+                const displayItems = this.getAttribute('data-filter');
+                
+                for(let z=0; z<li.length; z++){
+                    li[z].style.transform = "scale(0)";
+                    setTimeout(()=>{
+                        li[z].style.display = "none";
+                    }, 500);
+                    
+                    if ((li[z].getAttribute('data-category') == displayItems) || displayItems == "all"){
+                        li[z].style.transform = "scale(1)";
+                        setTimeout(()=>{
+                            li[z].style.display = "flex";
+                        }, 500); 
+                    }
+                }
+            }
+        }
+    }
+}
+
+new FilterProduct().run();
+
