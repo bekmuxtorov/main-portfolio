@@ -4,6 +4,11 @@ from ckeditor.fields import RichTextField
 from .const import Const
 
 # Create your models here.
+class Home(models.Model):
+    image = models.ImageField(verbose_name='Rasmni kiriting:')
+    date = models.DateField(auto_now_add=True)
+    
+
 class Works(models.Model):
     project_directions = Const.project_directions
 

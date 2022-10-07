@@ -3,11 +3,15 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView
 
 from .const import Const
-from .models import Works
+from .models import Works,Home
 
 # Create your views here.
-class HomePageView(TemplateView):
-    template_name = 'home.html' 
+# class HomePageView(TemplateView):
+#     template_name = 'home.html' 
+
+def HomePageView(request):
+    object = list(Home.objects.all().order_by('-date'))[0]
+    return render(request, 'home.html', {'object':object})
 
 class WorksListView(ListView):
     model = Works
