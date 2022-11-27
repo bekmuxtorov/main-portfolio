@@ -36,6 +36,7 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 .env
+db.sqlite3
 
 # Unit test / coverage reports
 htmlcov/
