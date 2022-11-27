@@ -52,14 +52,14 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="first-nav--item">
-                  <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                  <a class="nav-link" aria-current="page" href="{% url 'home' %}">{% trans "Home" %}</a>
                 </li>
                 
                 <li class="first-nav--item">
-                  <a class="nav-link active" href="{% url 'works' %}" aria-current="page" >Portfolio</a>
+                  <a class="nav-link active" href="{% url 'works' %}" aria-current="page" >{% trans "Portfolio" %}</a>
                 </li>
                 <li class="first-nav--item">
-                  <a class="nav-link" href="{% url 'contact' %}" style="color: black;">Contact</a>
+                  <a class="nav-link" href="{% url 'contact' %}" style="color: black;">{% trans "Contact" %}</a>
                 </li>
                 <li class="first-nav--item">
                   <div class="lang">
@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      </nav>
+    </nav>
     
     
     <nav class="nav2">
@@ -93,7 +93,7 @@
       <ul class="nav-items">
         
         
-        <li class="nav-item {% if request.resolver_match.url_name == 'home'%}active{% endif %} " > <a class="nav-item" href=" {% url 'home' %}">Home</a></li>
+        <li class="nav-item {% if request.resolver_match.url_name == 'home'%}active{% endif %} " > <a class="nav-item" href=" {% url 'home' %}">{% trans "Home" %}</a></li>
         
         <li class="nav-item active_ {% if request.resolver_match.url_name == 'works'%}{% endif %} " > <a class="nav-item" href=" {% url 'works' %}">Portfolio</a></li>
         
@@ -103,10 +103,18 @@
             <ul>
               {% for language in languages %}
               <li>
-                <a href="http://127.0.0.1:8000/{{ language.code }}/works/"
-                {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-                {{ language.code }}
-              </a>
+                {% if request.resolver_match.url_name == "works" %}
+                <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/works/" >
+                  {{ language.code }}
+                </a>
+                
+                {% elif request.resolver_match.url_name == "works_detail" %}
+                <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/works/{{ object.id }}" >
+                  {{ language.code }}
+                </a>
+                
+                
+                {% endif %}
             </li>
             {% endfor %}
           </ul>

@@ -12,14 +12,13 @@
             {% trans "Bog'lanish" %}
         </div>
         <form action="" onsubmit=" return sendtelegram()">
-            <textarea type="text" name="message" rols="20" placeholder="Xabaringizni yozing" id="message"></textarea>
+            <textarea type="text" name="message" rols="20" placeholder="{% trans 'Xabaringizni yozing' %}" id="message"></textarea>
             <div class="box1">
-                <input type="text" name="name" placeholder="Ismingizni kiriting" required autocomplete="off" id="name">
-                <input type="email" name="email" placeholder="Emailingizni kiriting" required  id="email">
+                <input type="text" name="name" placeholder="{% trans 'Ismingizni kiriting' %}" required autocomplete="off" id="name">
+                <input type="email" name="email" placeholder="{% trans 'Emailingizni kiriting' %}" required  id="email">
             </div>
-            <input type="text" placeholder="Xatning qisqacha mazmunini yozing" name="mazmun" id="mazmun">
-            <input type="submit" value="Jo'natish" id="btn" class="btn btn-primary contact_button">
-
+            <input type="text" placeholder="{% trans 'Xatning qisqacha mazmunini yozing' %}" name="mazmun" id="mazmun">
+            <input type="submit" value="{% trans 'Yuborish' %}" id="btn" class="btn btn-primary contact_button">
         </form>   
     </section>
 </div>

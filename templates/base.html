@@ -58,7 +58,7 @@
                     <div class="nav">
                         <ul class="nav-items">
                             
-                            <li class="nav-item {% if request.resolver_match.url_name == 'home'%}active{% endif %} " > <a class="nav-item" href=" {% url 'home' %}">Home</a></li>
+                            <li class="nav-item {% if request.resolver_match.url_name == 'home'%}active{% endif %} " > <a class="nav-item" href=" {% url 'home' %}">{% trans "Home" %}</a></li>
                             
                             
                             <li class="nav-item {% if request.resolver_match.url_name == 'works'%}active{% endif %} " > <a class="nav-item" href=" {% url 'works' %}">Portfolio</a></li>
@@ -100,6 +100,11 @@
                             
                             {% elif request.resolver_match.url_name == 'blog_detail' %}
                             <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/blog/{{ object.id }}" >
+                                {{ language.code }}
+                            </a>
+
+                            {% elif request.resolver_match.url_name == 'blog' %}
+                            <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/blog/" >
                                 {{ language.code }}
                             </a>
                             
