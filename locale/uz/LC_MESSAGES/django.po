@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-25 23:12+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\config\settings.py:122
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\config\settings.py:123
+msgid "English"
+msgstr "English"
+
+#: .\templates\base.html:126
+msgid "years old, from Fergana, student at the University, Back-End Engineer"
+msgstr "yosh, Farg'onadan, Universitet talabasi, Backend dasturchi, ..."
+
+#: .\templates\base_portfolio.html:31
+msgid "Asadbek Muxtorov || Bajarilgan ishlar"
+msgstr ""
+
+#: .\templates\base_portfolio.html:50 .\templates\contact.html:12
+msgid "Bog'lanish"
+msgstr ""
+
+#: .\templates\blog_list.html:23
+msgid "Telegram kanal"
+msgstr ""
+
+#: .\templates\home.html:22
+msgid "Hobby: Frontend and Python"
+msgstr "Hobbi: Frontend va Python"
+
+#: .\templates\home.html:35
+msgid "Read Blog"
+msgstr "Blogni o'qish"
+
+#: .\templates\works.html:5 .\templates\works.html:13
+msgid "Bajarilgan ishlar"
+msgstr ""
+
+#: .\templates\works.html:16
+msgid "Barcha qiziqarli ishlar"
+msgstr ""
+
+#: .\templates\works.html:19
+msgid "Foydalanuvchilar uchun qulay veb-sahifalar yaratish mening ishimdir."
+msgstr ""
+
+#: .\templates\works.html:27
+msgid "Barchasi"
+msgstr ""
+
+#: .\templates\works.html:63
+msgid "Batafsil ko'rish"
+msgstr ""
+
+#: .\templates\works_detail.html:44
+msgid "Loyiha haqida"
+msgstr ""
+
+#: .\templates\works_detail.html:49
+msgid "Dasturlash jarayoni"
+msgstr ""
+
+#: .\templates\works_detail.html:58
+msgid "Loyiha deploymenti:"
+msgstr ""
+
+#: .\templates\works_detail.html:67
+msgid "Loyiha kodi "
+msgstr ""

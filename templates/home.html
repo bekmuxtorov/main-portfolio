@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load static %}
+
 {% block title %}
 Asadbek Muxtorov || Python developer
 {% endblock title %}
@@ -12,14 +14,15 @@ Asadbek Muxtorov || Python developer
     <div class="container">
         <div class="info">
             <div class="main-img">
-
+                {% if not object.image %}
+                <img src="{% static 'images/asadbek.jpg' %}" alt="author img">
+                {% else %}
                 <img src=" {{ object.image.url }} " alt="author img">
+                {% endif %}
             </div>
             <div class="main-description">
                 <h1><span class="an"></span></h1>
-                <h3>
-                    Hobby: Frontend and Python
-                </h3>
+                <h3>{% trans "Hobby: Frontend and Python" %}</h3>
                 <div class="social-media">
                     <a href="https://github.com/bekmuxtorov"><i class="fa-brands fa-github"></i></a>
                     <a href="https://t.me/Asadbek_Muxtorov"><i class="fa-brands fa-telegram"></i></a>
@@ -32,7 +35,7 @@ Asadbek Muxtorov || Python developer
             <p><span class="an2"></span></p>
             <div class="btn-group">
                 <a class="button blog-link" href="{% url 'works' %}">Portfolio</a>
-                <a class="button portfolio-link" href=" {% url 'blog' %} " >Read Blog</a>
+                <a class="button portfolio-link" href=" {% url 'blog' %} " >{% trans "Read Blog" %}</a>
                 
             </div>
         </div>

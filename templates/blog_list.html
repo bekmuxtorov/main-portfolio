@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block link %}{% static 'css/blog.css' %}{% endblock link %}
 {% block title %}Blog || Asadbek Muxtorov{% endblock title %}
@@ -19,7 +20,7 @@
             <div class="blog-area">
                 <div class="fixed-data">
                     <p>
-                        Telegram kanalga: <a href="https://t.me/s/asadbekmuxtorov_blog">@asadbekmuxtorov_blog</a>
+                        {% trans "Telegram kanal" %}: <a href="https://t.me/s/asadbekmuxtorov_blog">@asadbekmuxtorov_blog</a>
                     </p>
                     
                     <a class="fixed-data--a" href="https://t.me/s/asadbekmuxtorov_blog">Ulanish</a>

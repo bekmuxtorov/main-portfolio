@@ -1,5 +1,6 @@
 {% extends "base_portfolio.html" %}
 {% load static %}
+{% load i18n %}
 
 
 {% block title %}{{ object.project_name }}  || Asadbek Muxtorov
@@ -34,18 +35,18 @@
 <section class="portfolio-detail">
     <div class="container">
         <div class="detail-img">
-            <img src="{% static 'images/detail-img.png' %}" alt="picture for detail">
+            <img src="{{ object.img.url }}" alt="picture for detail">
         </div>
         <div class="detail-description">
             <ul class="project-overview">
                 <li>
                     <h4>
-                        Loyiha haqida
+                        {% trans "Loyiha haqida" %}
                     </h4>
                 </li>
                 <li>
                     <h5 class="overview-title">
-                        Dasturlash jarayoni
+                        {% trans "Dasturlash jarayoni" %}
                     </h5>
                     
                     <p>
@@ -54,7 +55,7 @@
                     
                     
                     <h5 class="overview-title">
-                        Loyiha deploymenti:
+                        {% trans "Loyiha deploymenti:" %}
                     </h5>
                     <p>
                         <a href="{{ object.project_view }}">
@@ -63,7 +64,7 @@
                     </p>
                     
                     <h5 class="overview-title">
-                        Loyiha kodi:
+                        {% trans "Loyiha kodi " %}:
                     </h5>
                     <p>
                         <a href="{{ object.project_github }}">

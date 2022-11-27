@@ -30,6 +30,7 @@ input:focus{
     box-sizing:border-box;
     display: flex;
     justify-content: space-between;
+    margin: 10px 0;
 }
 
 .box1 > input{

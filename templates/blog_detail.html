@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block link %}{% static 'css/blog_detail.css' %}{% endblock link %}
 
-{% block title %}
-{{object.title}}
-{% endblock title %}
+{% block title %} {{object.title}} {% endblock title %}
 {% block content %}
 
 <div class="container blog">
@@ -13,7 +12,8 @@
         <img src=" {{ object.image.url }} " alt=" {{ object.title }}" width="100%">
         <div class="item-description">
             <h4 class="blog-title">
-                {{ object.title }}
+                {{ object.title }}</br>
+                        
             </h4>
             <div class="blog-date">
                 <div class="date">

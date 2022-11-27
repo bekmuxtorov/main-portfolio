@@ -1,7 +1,8 @@
 {% extends "base_portfolio.html" %}
+{% load i18n %}
 
 {% block title %}
-    Bajarilgan ishlar || Asadbek Muxtorov
+    {% trans "Bajarilgan ishlar" %} || Asadbek Muxtorov
 {% endblock title %}
 {% block content %}
 
@@ -9,13 +10,13 @@
     <div class="container">
         <div class="section-title">
             <h4 class="sub-title">
-                Bajarilgan ishlar
+                {% trans "Bajarilgan ishlar" %}
             </h4>
             <h1 class="title">
-                Barcha qiziqarli ishlar
+                {% trans "Barcha qiziqarli ishlar" %}
             </h1>
             <p>
-                Foydalanuvchilar uchun qulay veb-sahifalar bizning ishimizdir. Shuningdek, men ba'zi ajoyib korxonalarga brending va shaxsiy echimlar bilan yordam berdim.
+                {% trans "Foydalanuvchilar uchun qulay veb-sahifalar yaratish mening ishimdir." %}
             </p>
         </div>
         
@@ -23,7 +24,7 @@
             
             <ul class="indicator filter-items">
                 <li data-filter="all">
-                    <a class="filter-item active filter-item1" href="#">Barchasi</a>
+                    <a class="filter-item active filter-item1" href="#">{% trans "Barchasi" %}</a>
                 </li>
                 <li data-filter="Frontend">
                     <a class="filter-item filter-item2" href="#">Frontend</a>
@@ -59,7 +60,7 @@
                         </p>
                         
                         <a class="btn-detail" href="{% url 'works_detail' work.pk %}">
-                            Batafsil ko'rish  <span class="btn-icon"></span>
+                            {% trans "Batafsil ko'rish" %}  <span class="btn-icon"></span>
                         </a>
                     </div>
                     

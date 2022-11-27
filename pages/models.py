@@ -2,29 +2,33 @@ from pyexpat import model
 from django.db import models
 from ckeditor.fields import RichTextField
 from .const import Const
+from parler.models import TranslatableModel, TranslatedFields
+
 
 # Create your models here.
 class Home(models.Model):
-    image = models.ImageField(verbose_name='Rasmni kiriting:')
+    image = models.ImageField(blank = True,verbose_name='Rasmni kiriting:')
     date = models.DateField(auto_now_add=True)
     
 
-class Works(models.Model):
-    project_directions = Const.project_directions
+class Works(TranslatableModel):
+    translations = TranslatedFields(
+        project_short_description = models.CharField(max_length=50, verbose_name="Loyiha haqida qisqa ma'lumot:", null=True),
+        project_description = RichTextField(verbose_name='Loyiha haqida(Batafsil):')
 
-    img = models.ImageField(blank = True, verbose_name = "Loyiha rasmi:")
+    )
+
     project_name = models.CharField(max_length=50, verbose_name='Loyiha nomi:')
+    project_directions = Const.project_directions
+    img = models.ImageField(blank = True, verbose_name = "Loyiha rasmi:")
     project_direction = models.CharField(
         max_length=35,
         choices=project_directions,
         default=1,
         verbose_name="Loyiha yo'nalish:"
-
     )
 
     # portfolio detail
-    project_short_description = models.CharField(max_length=50, verbose_name="Loyiha haqida qisqa ma'lumot:", null=True)
-    project_description = RichTextField(verbose_name='Loyiha haqida(Batafsil):')
 
     project_date = models.DateTimeField(auto_now_add=True, null=True)
     project_client = models.CharField(max_length=30, verbose_name='Client ism:', null=True)

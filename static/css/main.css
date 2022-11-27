@@ -60,7 +60,9 @@ header{
 .header .nav-items{
     display: flex;
     margin: 0;
+    align-items: center;
 }
+
 
 .header .nav-item{
     list-style: none;
@@ -192,12 +194,15 @@ footer{
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-    /* position: fixed; */
-    
     bottom: 0;
     text-align: center;
     color:rgb(164, 175, 164);
     letter-spacing: 2px;
+}
+
+.footer-p{
+    padding: 0;
+    margin: 0 !important;
 }
 
 .c-character{
@@ -206,6 +211,31 @@ footer{
     position: relative;
     top: 4px;
 }
+
+.lang ul{
+    margin: 0;
+    padding: 0 !important;
+}
+
+li {
+    display: inline;
+    text-decoration: none;
+    
+  }
+
+  li:not(:last-child){
+      padding-right: 5px;
+  }
+  a {
+    text-decoration: none;
+    color: #FFF;
+  }
+  a:hover {
+    color: #4F4846;
+  }
+
+
+
 
 /* responsive design  */
 @media only screen and (max-width: 1024px) {
@@ -340,6 +370,12 @@ footer{
 @media only screen and (max-width: 582px){
     .section-title h1{
         font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 441px){
+    .lang2{
+        display: none;
     }
 }
  

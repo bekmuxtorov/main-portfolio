@@ -36,6 +36,7 @@ nav{
     flex-direction: row;
     align-items: center;
     margin: 0;
+    list-style: none;
 }
 
 .nav-item{
@@ -216,8 +217,8 @@ p{
 }
 
 .img img {
-    width: 100%;
-    height: 100%;
+    width: 610px;
+    height: 367px;
     object-fit: cover;
     -o-object-fit: cover;
     border: 0;
@@ -316,7 +317,80 @@ p{
 /* +++++++++++++++++++++++++++++++++ */
 
 
+.nav1{
+    display: none !important;
+}
 
+.lang li {
+    display: inline;
+    text-decoration: none;
+    text-align: center;
+    
+  }
+
+.lang  li:not(:last-child){
+      padding-right: 5px;
+  }
+.lang  a {
+    text-decoration: none;
+    color: #DDAF94;
+  }
+
+.lang ul{
+    padding: 0;
+}
+
+.lang a:hover {
+    color: #4F4846;
+  }
+
+.offcanvas-body ul{
+    display: flex;
+    justify-content: center;
+}
+
+.nav2 .lang {
+    font-size: 20px;
+}
+
+.nav2 .lang li{
+    color: #fff !important
+    
+}
+
+.first-nav--item{
+    font-size: 20px;
+    color: #464f4a;
+}
+.navbar-brand, .offcanvas-title{
+    font-family: 'GlacialIndifference', sans-serif;
+    color: rgb(0, 255, 204) !important;
+}
+
+.navbar-toggler, .navbar-toggler-icon{
+    color: rgb(0, 255, 204) !important;
+}
+
+.navbar{
+    background-color: #5C2CC5 !important;
+    padding:20px 0 !important;
+}
+
+.first-nav--item a{
+    font-family: 'GlacialIndifference', sans-serif;
+    color: black;
+    text-align: center;
+
+}
+
+.active {
+    color: rgb(162 96 0) !important;
+}
+
+
+.nav-link{
+    text-align: center !important;
+}
 
 @media only screen and (max-width: 992px) {
     .filter-item {
@@ -325,6 +399,14 @@ p{
 
     .description{
         width: auto;
+    }
+
+    .nav1{
+         display: block !important;
+    }
+
+    .nav2{
+        display: none;
     }
 }
 
@@ -421,6 +503,8 @@ footer p{
     .portfolio-item{
         padding: 15px;
     }
+
+    .
 
 }
 

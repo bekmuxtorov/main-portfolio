@@ -1,3 +1,4 @@
+const son = new Date().getFullYear(); 
 
 var typed = new Typed('.an', {
     strings: [
@@ -7,9 +8,12 @@ var typed = new Typed('.an', {
     loop: false
 });
 
+
+
+
 var typed = new Typed('.an2', {
     strings: [
-        "19 years old, from Fergana, student at the University, Back-End Engineer"
+        `${son-2003} years old, from Fergana, student at the University, Back-End Engineer`
     ],
     typeSpeed: 100,
     loop: false,

@@ -1,4 +1,9 @@
+{% load i18n %}
 {% load static %}
+{% get_current_language as CURRENT_LANGUAGE %}
+{% get_available_languages as AVAILABLE_LANGUAGES %}
+{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,14 +40,20 @@
     <title>{% block title %}
         
         {% endblock title %}</title>
+        <style>
+            
+        </style>
+        
         
     </head>
     <body>
         <header>
             <div class="container">
+                
+                
                 <div class="header">
                     <div class="logo">
-                        <a href="{% url 'home' %}">bekmuxtorov.uz</a>
+                        <a href="{% url 'home' %}">bekmuxtorov.me</a>
                     </div>
                     <div class="nav">
                         <ul class="nav-items">
@@ -53,6 +64,9 @@
                             <li class="nav-item {% if request.resolver_match.url_name == 'works'%}active{% endif %} " > <a class="nav-item" href=" {% url 'works' %}">Portfolio</a></li>
                             
                             <li class="nav-item {% if request.resolver_match.url_name == 'blog'%}active{% endif %} " > <a class="nav-item" href=" {% url 'blog' %}">Blog</a></li>
+                            
+                            
+                            
                         </ul>
                     </div>
                 </div>
@@ -66,7 +80,7 @@
         </div>
         
         <footer>
-            <p>
+            <p class="footer-p">
                 <span class="c-character">©</span>
                 <script>
                     const Year = new Date().getFullYear();
@@ -74,11 +88,61 @@
                 </script>
                 Asadbek Muxtorov
             </p>
-        </footer>
+            <li class="nav-item">
+                <div class="lang">
+                    <ul>
+                        {% for language in languages %}
+                        <li>
+                            {% if request.resolver_match.url_name == 'home'%}
+                            <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/" >
+                                {{ language.code }}
+                            </a>
+                            
+                            {% elif request.resolver_match.url_name == 'blog_detail' %}
+                            <a {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %} href="http://127.0.0.1:8000/{{ language.code }}/blog/{{ object.id }}" >
+                                {{ language.code }}
+                            </a>
+                            
+                            {% endif %}
+                            
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </li>
+    </footer>
+    
+    <script src=" {% static 'js/typed.js' %} "></script>
+    <script>
         
-        <script src=" {% static 'js/typed.js' %} "></script>
-        <script src=" {% static 'js/typing.js' %} "></script>
+        const son = new Date().getFullYear(); 
+        
+        var typed = new Typed('.an', {
+            strings: [
+            "ASADBEK MUXTOROV"
+            ],
+            typeSpeed: 100,
+            loop: false
+        });
         
         
-    </body>
-    </html>
+        
+        
+        var typed = new Typed('.an2', {
+            strings: [
+            `${son-2003} {% trans "years old, from Fergana, student at the University, Back-End Engineer" %}`
+            ],
+            typeSpeed: 100,
+            loop: false,
+            startDelay: 300,
+            showCursor: true
+        });
+        
+        
+        
+    </script>
+    
+    
+</body>
+</html>
